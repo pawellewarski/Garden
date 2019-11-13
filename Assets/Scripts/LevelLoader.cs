@@ -25,11 +25,38 @@ public class LevelLoader : MonoBehaviour
         LoadNextSceen();
     }
 
+    public void RestartSceen()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceenIndex);
+    }
+
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Start Screen");
+    }
+
+    public void LoadOptionsSceen()
+    {
+        SceneManager.LoadScene("Options Screen");
+    }
+
     public void LoadNextSceen()
     {
         SceneManager.LoadScene(currentSceenIndex + 1);
     }
 
+    public void LoadLoseSceen()
+    {
+        SceneManager.LoadScene("Lose Screen");
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     // Update is called once per frame
     void Update()
     {
